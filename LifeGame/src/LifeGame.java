@@ -28,11 +28,11 @@ public class LifeGame extends JFrame implements WindowListener, ActionListener, 
 		this.add(transView);
 		this.setBounds(new Rectangle(0, 0, 600, 600));
 		this.setLayout(null);
-		Auto_button = new JButton("©“®Ä¶");
-		Next_button = new JButton("Ÿ‚Ö");
-		Stop_button = new JButton("ˆê’â~");
+		Auto_button = new JButton("Auto");
+		Next_button = new JButton("Next");
+		Stop_button = new JButton("Stop");
 		Time_text = new JTextField("1000");
-		Enter_button = new JButton("Œˆ’è");
+		Enter_button = new JButton("OK");
 		Auto_button.setBounds(470, 20, 96, 24);
 		this.add(Auto_button);
 		Auto_button.addActionListener(this);

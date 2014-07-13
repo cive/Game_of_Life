@@ -9,7 +9,7 @@ class Cells extends Thread{
 	Cells(int x, int y){
 		Size = new Point(x, y);
 		Cell = new boolean[y][x];
-		// ������
+		// セルの初期化
 		clear();
 	}
 	Cells(){
@@ -62,6 +62,7 @@ class Cells extends Thread{
 		for(int x = 0; x < Size.x; x++){
 			for(int y = 0; y < Size.x; y++){
 				int neighbor = 0;
+				// セル近傍の点を定義
 				int xLeft = ((x-1)%Size.x < 0)?Size.x-1:(x-1)%Size.x;
 				int yTop = ((y-1)%Size.y < 0)?Size.y-1:(y-1)%Size.y;
 				int xRight = (x+1)%Size.x;
@@ -72,6 +73,7 @@ class Cells extends Thread{
 							new Point(xRight,yBottom), new Point(x, yBottom),
 							new Point(xLeft,yBottom)
 							};
+				// セル近傍の判定
 				for(int k = 0; k < 8; k++){
 					if(tmp_Cell.getCell(p[k]))
 						neighbor++;

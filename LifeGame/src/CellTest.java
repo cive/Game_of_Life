@@ -14,12 +14,12 @@ public class CellTest {
 	}
 	static void print_cell(){
 		Point p = cellss.getSize();
-		for(int y = 0; y < p.y; y++){	//print‚È‚Ì‚ÅA‚±‚±‘‚«•û‚µ‚©‚È‚¢
+		for(int y = 0; y < p.y; y++){	//printã¯é…åˆ—ã‚’å‡¦ç†ã™ã‚‹ã®ã§ä»•æ–¹ãªã„â€¦
 			for(int x = 0; x < p.x; x++){
 				if(cellss.getCell(x, y))
-					System.out.print("¡");
+					System.out.print("â– ");
 				else
-					System.out.print(" ");
+					System.out.print("â–¡");
 			}
 			System.out.println();
 		}

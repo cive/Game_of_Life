@@ -15,22 +15,22 @@ import javax.swing.JPanel;
 
 public class CellsTransViewer extends JPanel implements MouseListener, MouseMotionListener, WindowListener, Runnable{
 	/**
-	 * LifeGame‚Ì•\¦•”
+	 * LifeGameã®è¡¨ç¤ºéƒ¨
 	 */
 	private static final long serialVersionUID = 1L;
-	//private BufferedImage axis; // ’¼Œğ²“I‚È
+	//private BufferedImage axis; // ç›´äº¤è»¸çš„ãª
 	private BufferedImage cellsImage;
 	private Graphics2D offImage;
 	private Cells cells;
-	private Point Cells_number; //ƒZƒ‹‚Ìc‰¡‚ÌŒÂ”
+	private Point Size_of_CellAutomata; //ã‚»ãƒ«ã‚ªãƒ¼ãƒˆãƒãƒˆãƒ³ã®å¤§ãã•
 	private final static int view_width = 450;
 	private final static int view_height = 450;
 	private final static int cell_size = 5;
 	public CellsTransViewer(){
 		this.addMouseListener(this);
-		Cells_number = new Point(80, 80);
+		Size_of_CellAutomata = new Point(80, 80);
 		this.setBounds(new Rectangle(0, 0, view_width, view_height));
-		cells = new Cells(Cells_number);
+		cells = new Cells(Size_of_CellAutomata);
 		cells.start();
 		cellsImage = new BufferedImage(400, 400, BufferedImage.TYPE_INT_RGB);
 		offImage = cellsImage.createGraphics();
@@ -42,8 +42,8 @@ public class CellsTransViewer extends JPanel implements MouseListener, MouseMoti
 		offImage.setColor(Color.BLACK);
 		offImage.fillRect(0, 0, 400, 400);
 		offImage.setColor(Color.WHITE);
-		for(int x = 0; x < Cells_number.x; x++){
-			for(int y = 0; y < Cells_number.y; y++){
+		for(int x = 0; x < Size_of_CellAutomata.x; x++){
+			for(int y = 0; y < Size_of_CellAutomata.y; y++){
 				if(cells.getCell(x, y))
 					offImage.fillRect(x*cell_size, y*cell_size, cell_size, cell_size);
 			}
@@ -79,7 +79,7 @@ public class CellsTransViewer extends JPanel implements MouseListener, MouseMoti
 	public void mousePressed(MouseEvent me) {
 		int x = (me.getX()-50)/cell_size;
 		int y = (me.getY()-50)/cell_size;
-		if(0<=x && x<=Cells_number.x && 0<=y && y<=Cells_number.y){
+		if(0<=x && x<=Size_of_CellAutomata.x && 0<=y && y<=Size_of_CellAutomata.y){
 			cells.setCell(x, y, !cells.getCell(x, y));
 		}
 		repaint();	
