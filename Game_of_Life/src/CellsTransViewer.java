@@ -9,20 +9,17 @@ import java.awt.event.MouseMotionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.awt.image.BufferedImage;
-
 import javax.swing.JPanel;
-
 
 public class CellsTransViewer extends JPanel implements MouseListener, MouseMotionListener, WindowListener, Runnable{
 	/**
-	 * LifeGameの表示部
+	 * view part of Game of Life
 	 */
 	private static final long serialVersionUID = 1L;
-	//private BufferedImage axis; // 直交軸的な
 	private BufferedImage cellsImage;
 	private Graphics2D offImage;
 	private Cells cells;
-	private Point Size_of_CellAutomata; //セルオートマトンの大きさ
+	private Point Size_of_CellAutomata;
 	private final static int view_width = 450;
 	private final static int view_height = 450;
 	private final static int cell_size = 5;
@@ -37,7 +34,6 @@ public class CellsTransViewer extends JPanel implements MouseListener, MouseMoti
 		Thread refresh = new Thread(this);
 		refresh.start();
 	}
-	
 	public void paint(Graphics g){
 		offImage.setColor(Color.BLACK);
 		offImage.fillRect(0, 0, 400, 400);
@@ -60,21 +56,11 @@ public class CellsTransViewer extends JPanel implements MouseListener, MouseMoti
 		cells.setWait_time(wait_time);
 	}
 	@Override
-	public void mouseClicked(MouseEvent me) {
-	}
-
+	public void mouseClicked(MouseEvent me) {}
 	@Override
-	public void mouseEntered(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-
+	public void mouseEntered(MouseEvent arg0) {}
 	@Override
-	public void mouseExited(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-
+	public void mouseExited(MouseEvent arg0) {}
 	@Override
 	public void mousePressed(MouseEvent me) {
 		int x = (me.getX()-50)/cell_size;
@@ -84,52 +70,24 @@ public class CellsTransViewer extends JPanel implements MouseListener, MouseMoti
 		}
 		repaint();	
 	}
-
 	@Override
-	public void mouseReleased(MouseEvent me) {
-	}
-
+	public void mouseReleased(MouseEvent me) {}
 	@Override
-	public void windowActivated(WindowEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-
+	public void windowActivated(WindowEvent arg0) {}
 	@Override
-	public void windowClosed(WindowEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-
+	public void windowClosed(WindowEvent arg0) {}
 	@Override
-	public void windowClosing(WindowEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-
+	public void windowClosing(WindowEvent arg0) {}
 	@Override
-	public void windowDeactivated(WindowEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-
+	public void windowDeactivated(WindowEvent arg0) {}
 	@Override
 	public void windowDeiconified(WindowEvent arg0) {
 		repaint();
 	}
-
 	@Override
-	public void windowIconified(WindowEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-
+	public void windowIconified(WindowEvent arg0) {}
 	@Override
-	public void windowOpened(WindowEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-
+	public void windowOpened(WindowEvent arg0) {}
 	@Override
 	public void run() {
 		while(true){
@@ -142,13 +100,8 @@ public class CellsTransViewer extends JPanel implements MouseListener, MouseMoti
 		}
 		
 	}
-
 	@Override
-	public void mouseDragged(MouseEvent me) {
-	}
-
+	public void mouseDragged(MouseEvent me) {}
 	@Override
-	public void mouseMoved(MouseEvent me) {
-	}
-
+	public void mouseMoved(MouseEvent me) {}
 }

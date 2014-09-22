@@ -6,12 +6,11 @@ import java.awt.event.WindowListener;
 
 import javax.swing.*;
 
-public class LifeGame extends JFrame implements WindowListener, ActionListener, Runnable{
+public class Game_of_Life extends JFrame implements WindowListener, ActionListener, Runnable{
 
 	/**
-	 * Cell Automata (Life game)
-	 * 
-	 * TODO: Graphics, ClickEvent, WaitTimeConfigText
+	 * Cell Automata (game of Life)
+	 *
 	 */
 	private JButton Auto_button;
 	private JButton Next_button;
@@ -21,9 +20,9 @@ public class LifeGame extends JFrame implements WindowListener, ActionListener, 
 	private CellsTransViewer transView;
 	private static final long serialVersionUID = 1L;
 	public static void main(String args[]){
-		new LifeGame();
+		new Game_of_Life();
 	}
-	public LifeGame(){
+	public Game_of_Life(){
 		transView = new CellsTransViewer();
 		this.add(transView);
 		this.setBounds(new Rectangle(0, 0, 600, 600));
@@ -52,40 +51,21 @@ public class LifeGame extends JFrame implements WindowListener, ActionListener, 
 		refresh.start();
 	}
 	@Override
-	public void windowActivated(WindowEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void windowActivated(WindowEvent arg0) {}
 	@Override
-	public void windowClosed(WindowEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void windowClosed(WindowEvent arg0) {}
 	@Override
-	public void windowClosing(WindowEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void windowClosing(WindowEvent arg0) {}
 	@Override
-	public void windowDeactivated(WindowEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void windowDeactivated(WindowEvent arg0) {}
 	@Override
 	public void windowDeiconified(WindowEvent arg0) {
 		repaint();
-		
 	}
 	@Override
-	public void windowIconified(WindowEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void windowIconified(WindowEvent arg0) {}
 	@Override
-	public void windowOpened(WindowEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void windowOpened(WindowEvent arg0) {}
 	@Override
 	public void actionPerformed(ActionEvent ae) {
 		repaint();

@@ -13,7 +13,7 @@ public class CellTest {
 		print_cell();
 	}
 	static void print_cell(){
-		Point p = cellss.getSize();
+		Point p = cellss.getField_size();
 		for(int y = 0; y < p.y; y++){	//printは配列を処理するので仕方ない…
 			for(int x = 0; x < p.x; x++){
 				if(cellss.getCell(x, y))
