@@ -25,7 +25,7 @@ class Cells extends Thread{
 			try{
 				Thread.sleep(wait_time);
 			} catch (InterruptedException ie){
-				System.out.println("test2 InterruptException");
+				System.out.println("Cells class InterruptException");
 			}
 		}
 	}
