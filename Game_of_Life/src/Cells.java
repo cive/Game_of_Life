@@ -51,12 +51,12 @@ class Cells extends Thread{
 		for(int y = 0; y < field_size.y; y++)
 			for(int x = 0; x < field_size.x; x++)
 				Cell[y][x] = false;
-	};
+	}
 	void copyCellsStateFrom(Cells cells){
 		for(int y = 0; y < Cell.length; y++)
 			for(int x = 0; x < Cell[y].length; x++)
 				Cell[y][x] = cells.getCell(x, y);
-	}; // return boolean[][]
+	}
 	void nextState(){
 		Cells pre_Cells_State = new Cells(field_size.x, field_size.y);
 		pre_Cells_State.copyCellsStateFrom(this);
@@ -72,7 +72,6 @@ class Cells extends Thread{
 				new Point(xRight,yBottom), new Point(x, yBottom),
 				new Point(xLeft,yBottom)
 			};
-			// セル近傍の判定
 			for(int k = 0; k < 8; k++){
 				if(pre_Cells_State.getCell(moore_neighborhood[k]))
 					neighboring_number++;
@@ -87,5 +86,5 @@ class Cells extends Thread{
 				else this.setCell(x, y, false);
 			}}
 		}
-	};
+	}
 }
